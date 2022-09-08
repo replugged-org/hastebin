@@ -8,7 +8,7 @@ module.exports = class Hastebin extends Plugin {
   startPlugin () {
     const domain = this.settings.get('domain', 'https://haste.powercord.dev');
 
-    powercord.api.settings.registerSettings('pc-hastebin', {
+    powercord.api.settings.registerSettings('hastebin', {
       category: this.entityID,
       label: 'Hastebin',
       render: Settings
@@ -52,7 +52,7 @@ module.exports = class Hastebin extends Plugin {
   }
 
   pluginWillUnload () {
-    powercord.api.settings.unregisterSettings('pc-hastebin');
+    powercord.api.settings.unregisterSettings('hastebin');
     powercord.api.commands.unregisterCommand('hastebin');
   }
 
